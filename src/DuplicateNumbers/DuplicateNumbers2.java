@@ -26,4 +26,5 @@ public class DuplicateNumbers2 {
            }
         }
     }
-}
+}//该方法的空间复杂度为O（1）
+
