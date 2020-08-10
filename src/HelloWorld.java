@@ -15,6 +15,10 @@ public class HelloWorld {
         System.out.println(new String(c));//abcd
         System.out.println(Arrays.toString(Arrays.copyOfRange(i, 1, 2)));
         //
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(2);
+        System.out.println(queue.size());
+
 
 
     }
