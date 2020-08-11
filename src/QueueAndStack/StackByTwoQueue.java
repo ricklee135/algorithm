@@ -11,20 +11,21 @@ public class StackByTwoQueue {
     // 从双端队列的开头移除元素。从Queue 接口继承的方法完全等效于 Deque 方法.
     //Deque<Integer> queue2 = new LinkedList<>();
     Queue<Integer> queue2 = new LinkedList<>();
-    public void push(int node){
+
+    public void push(int node) {
         //添加元素，add()和remove()方法在失败的时候会抛出异常(不推荐)
         queue1.offer(node);
     }
-    public int pop(){
-        while (queue1.size() > 1){
-                ////返回第一个元素，并在队列中删除
-                queue2.offer(queue1.poll());
-            }
+
+    public int pop() {
+        while (queue1.size() > 1) {
+            ////返回第一个元素，并在队列中删除
+            queue2.offer(queue1.poll());
+        }
 
         int ret = queue1.poll();
         //queue1与queue2交换，始终保持queue1中剩下的元素是最后压入的元素，首先被弹出
         queue1 = queue2;
         return ret;
     }
-
 }
