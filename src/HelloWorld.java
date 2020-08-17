@@ -18,7 +18,8 @@ public class HelloWorld {
         Queue<Integer> queue = new LinkedList<>();
         queue.offer(2);
         System.out.println(queue.size());
-
+        int[] n = {12, 3, 6,9,5};
+        Arrays.sort(n);
 
 
     }

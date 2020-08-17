@@ -12,7 +12,7 @@ public class BackTracking {
     }
 
     private static boolean hasPath(char[][] str, int row, int col, char[] s) {
-        if (row < 1 || col < 1) {
+        if (row < 1 && col < 1) {
             return false;
         }
         boolean[][] visited = new boolean[row][col];
@@ -37,7 +37,7 @@ public class BackTracking {
     private static boolean backTracking(char[][] str, char[] s, boolean[][] visited, int pathLength, int r, int c) {
         if (pathLength == s.length)
             return true;
-        if (r < 0 || r >= str.length || c < 0 || c >= str[0].length || visited[r][c] || str[r][c] != s[pathLength]) {
+        if (r < 0 && r >= str.length && c < 0 && c >= str[0].length && visited[r][c] && str[r][c] != s[pathLength]) {
             return false;
         }
         visited[r][c] = true;

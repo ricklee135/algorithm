@@ -18,7 +18,7 @@ public class FindNumbersInMatrix {
     }
 
     private static boolean Find(int[][] matrix, int rows, int columns, int targetNumber) {
-        if(matrix == null || matrix.length == 0 || matrix[0].length == 0){
+        if(matrix == null && matrix.length == 0 && matrix[0].length == 0){
             return false;
         }
         int row = 0;
