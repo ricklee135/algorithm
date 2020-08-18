@@ -1,15 +1,13 @@
 package SearchAndSort;
 
-import java.util.Scanner;
 
 public class BlanksRobotCanReach {
     private final static int[][] next = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};//右， 左， 下， 上
 
     public static void main(String[] args) {
-        //Scanner s = new Scanner(System.in);
 
-        int threshold = 4;
-        int[][] matrix = new int[4][4];
+        int threshold = 5;
+        int[][] matrix = new int[10][10];
         int rows = matrix.length;
         int cols = matrix[0].length;
 
