@@ -49,6 +49,12 @@ public class FindMin {
         int[] binary = findMin(v, k);
         int num = 0;
         for(int i = 0; i < binary.length; i++){
+            /*附：为什么很多程序竞赛题目都要求答案对 1e9+7 取模？
+            1000000007是一个质数
+            int32位的最大值为2147483647，所以对于int32位来说1000000007足够大
+            int64位的最大值为2^63-1，对于1000000007来说它的平方不会在int64中溢出
+            所以在大数相乘的时候，因为(a∗b)%c=((a%c)∗(b%c))%c，所以相乘时两边都对
+            1000000007取模，再保存在int64里面不会溢出*/
             num = (num * 2 + binary[i]) % (1000000000 + 7);
         }
         System.out.println(num);
