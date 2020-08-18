@@ -1,4 +1,4 @@
-package StringReplace;
+package StringTraining.StringReplace;
 
 public class ReplaceString2 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package StringBasicIntroduce;
+package StringTraining.StringBasicIntroduce;
 
 import java.util.Arrays;
 

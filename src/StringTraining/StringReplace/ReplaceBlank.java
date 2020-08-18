@@ -1,4 +1,4 @@
-package StringReplace;
+package StringTraining.StringReplace;
 
 import java.util.Scanner;
 
