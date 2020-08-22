@@ -1,0 +1,18 @@
+###java.util.Scanner与java.io.StreamToken
+https://blog.csdn.net/weixin_44738308/article/details/107580608
+
+1.Scanner通过正则表达式来解析一个个“字节数据”，才会有他的next()，
+nextInt();nextBigDecimal()等方法，正则表达式的效率不高才导致
+答题出现超时的现象。
+
+2.StreamToken是通过分析“字符流”将字符拆分为一个个Token，
+StreamToken底层会去区分Token类型：word、number，与Scanner比
+较是不是省了很多。因此StreamToken比Scanner快很多。
+###java.io.InputStreamReader与java.io.BufferedReader
+
+刚开始我也有点一头雾水，InputStreamReader和BufferedReader不都
+是操作字符流嘛，只是BufferedReader有缓冲区而已，但是效率应该差距不
+大才是啊。我还百度了一下有网友专门测试BufferedReader使用缓冲区与不
+使用缓冲区的效率差 Link ，结果并不是特别明显。后来还是百度了一下官网
+去看了一下大佬的BufferedReader 的解释才恍然大悟。BufferedReader
+在相同时间内是以一块内存去读取的，相比与一个一个的读取要快很多。
