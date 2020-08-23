@@ -1,4 +1,4 @@
-package DynamicAndGreedyAlgorithom;
+package DynamicAndGreedyAlgorithom.DevideRopeAndGetMaxDecimal;
 
 import java.util.Scanner;
 
