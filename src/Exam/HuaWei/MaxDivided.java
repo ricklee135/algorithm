@@ -1,6 +1,7 @@
 package Exam.HuaWei;
-import java.util.Scanner;
 
+import java.util.Scanner;
+//思想：使用二分法不断逼近目标，不断对二分法的值进行校验，找出每组和小于的最大的值，然后根据索引输出。
 public class MaxDivided {
     static int m, k, ans;
     static int[] nums = new int[505];
@@ -16,13 +17,12 @@ public class MaxDivided {
                 now += nums[i];
             }
         }
-        if(now>=mid)
-        {
+        if (now >= mid) {
             t++;
         }
-        if(t >= k){
+        if (t >= k) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }
@@ -46,12 +46,12 @@ public class MaxDivided {
             if (check(mid)) {
                 l = mid + 1;
             } else {
-                r = mid;
+                r = mid - 1;
             }
         }
-        int d = l - 1;
+        int d = l;
         int now = 0;
-        int[] index = new int[505];
+        int[] index = new int[505]; //用于记录索引
         int num = 1;
         int count = 0;
         for (int i = 0; i < m; i++) {
