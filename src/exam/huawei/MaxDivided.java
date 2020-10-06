@@ -76,8 +76,6 @@ public class MaxDivided {
             }
         }
     }
-
-
 }
 //6 3 1 2 3 2 5 4 输出 1 2 3 / 2 5 / 4
 //输入

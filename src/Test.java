@@ -1,29 +1,54 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
-public class Test {
+class Test{
+    static final int N = 100010;
+    static int[] e = new int[N];
+    static int[] l = new int[N];
+    static int[] r = new int[N];
+    static int idx = 0;
 
-    public static void main(String[] args) {
+    public static void insert(int k, int v){
+        e[idx] = v;
+        r[idx] = r[k];
+        l[idx] = k;
+        l[r[k]] = idx;
+        r[k] = idx++;
+    }
+
+    public static void remove(int k){
+        r[l[k]] = r[k];
+        l[r[k]] = l[k];
+    }
+
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        long A = sc.nextInt();
-        long B = sc.nextInt();
-        long a = sc.nextInt();
-        long b = sc.nextInt();
-        if (A * b < a || a * B < b) {//x (A)* b = Y(b) * a ,max X * y 1 - A xuan x 1- b xuan y
-            System.out.println(0 + " " + 0);
-        }
-        long x, y;
-        for (x = 1; x < A; x++) {
-            y =  x * b / a;
-            if (y <= B && a * y == b * x) {
-                x++;
+        int m = sc.nextInt();
+        r[0] = 1;
+        l[1] = 0;
+        idx = 2;
+        int k = 0, x = 0;
+        for(int i = 0; i < m; i++){
+            String s = sc.next();
+            if(s.equals("L")){
+                x = sc.nextInt();
+                insert(0, x);
+            }else if(s.equals("R")){
+                x = sc.nextInt();
+                insert(l[1], x);
+            }else if(s.equals("D")){
+                k = sc.nextInt();
+                remove(k);
+            }else if(s.equals("IL")){
+                k = sc.nextInt();
+                x = sc.nextInt();
+                insert(l[k + 1], x);
+            }else{
+                k = sc.nextInt();
+                x = sc.nextInt();
+                insert(k + 1, x);
             }
         }
-        for (y = 1; y < B; y++) {
-            x =  y * a / b;
-            if (x <= A && a * y == b * x) {
-                y++;
-            }
-        }
-        System.out.println(a + " " + b);
+        for(int j = r[0]; j != 1; j = r[j]) System.out.print(e[r[j]] + " ");
     }
 }

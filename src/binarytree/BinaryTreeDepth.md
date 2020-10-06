@@ -22,7 +22,7 @@ class Solution{
     public int maxDepth_1(TreeNode root) {
         if (root == null)
             return 0;
-        Queue<TreeNode> queue = new listnode<TreeNode>();
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
         int res = 0;
         queue.add(root);
         while (!queue.isEmpty()) {
