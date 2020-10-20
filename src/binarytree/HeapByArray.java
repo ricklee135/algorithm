@@ -59,8 +59,8 @@ class HeapByArray{
 
 
     public static void heapSwap (int k, int x){
-        swap(ph, ph[hp[k]], ph[hp[x]]);
-        swap(hp, hp[k], hp[x]);
+        swap(ph, hp[k], hp[x]);
+        swap(hp, k, x);
         swap(h, k, x);
     }
 
