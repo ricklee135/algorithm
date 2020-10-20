@@ -1,12 +1,9 @@
-import java.util.ArrayList;
-import java.util.*;
-import java.net.*;
-import java.io.*;
+package SocketTest;// 文件名 GreetingClient.java
 
 import java.net.*;
 import java.io.*;
 
-public class HelloWorld
+public class GreetingClient
 {
     public static void main(String [] args)
     {
